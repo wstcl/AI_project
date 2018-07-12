@@ -14,7 +14,13 @@ if length(unique(chromosome))==length(chromosome)   %no same time and location
             outputArg1 = outputArg1+100;
             break
         end      
-    end    
+    end 
+    for n = 1:6 %no time conflict for one professor
+        if mod(chromosome(2*n)-chromosome(2*n-1),20)==0
+            outputArg1 = outputArg1 + 100;
+            break
+        end
+    end
     
     
     

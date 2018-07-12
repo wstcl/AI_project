@@ -1,6 +1,6 @@
 new_pop = population_init();
 stop_sign = 0;
-for j=1:5000
+for j=1:100000
     for i=1:20
         cost(i)= fitness(new_pop(i,:));
         if cost(i)==0

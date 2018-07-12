@@ -14,8 +14,6 @@ for n=1:12
     time(n).row = fix((time(n).slot-1)/5)+2;
     %data(n)=strcat(rm(n),subject(n));%room and subject for subject n
     table(time(n).row,time(n).colum,room(n))=subject(n);
-    hold on
-    scatter3(time(n).row,time(n).colum,room(n))
 end
 t=table;
 

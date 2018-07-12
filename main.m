@@ -1,29 +1,16 @@
-new_pop = population_init(8000);
+new_pop = population_init();
 stop_sign = 0;
-pointer = 0;
-for Rounds=1:99999
-    for count=1:size(new_pop,1)
-        pointer = pointer+1;
-        cost(pointer)= fitness(new_pop(pointer,:));
-        if cost(pointer)>=100
-            new_pop(pointer,:)=[];
-            cost(pointer)=[];
-            pointer = pointer-1;
-            continue
-        end
-        if cost(pointer)==10
-            pass
-        end
-        if cost(pointer)==0
+for j=1:100000
+    for i=1:20
+        cost(i)= fitness(new_pop(i,:));
+        if cost(i)==0
             stop_sign = 1;
-            Table = Draw_table(new_pop(pointer,:))
+            Draw_table(new_pop(i,:))
             break
         end
     end
     
-    if stop_sign == 1
-        disp("Iteration Rounds =")
-        disp(Rounds)
+    if stop_sign == 1 
         break
     end
     

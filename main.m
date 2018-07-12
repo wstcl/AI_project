@@ -5,7 +5,7 @@ for j=1:5000
         cost(i)= fitness(new_pop(i,:));
         if cost(i)==0
             stop_sign = 1;
-            new_pop(i,:)
+            Draw_table(new_pop(i,:))
             break
         end
     end

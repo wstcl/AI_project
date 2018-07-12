@@ -3,7 +3,7 @@ function y = population_init()
 %   Detailed explanation goes here
 for i=1:20              % The # of genes
     for j=1:12         % The # of chromosome
-        y(i,j)=unidrnd(120);
+        y(i,j) = unidrnd(120);
     end
 end
 end

@@ -1,8 +1,19 @@
 new_pop = population_init();
-for j=1:40
+stop_sign = 0;
+for j=1:5000
     for i=1:20
         cost(i)= fitness(new_pop(i,:));
+        if cost(i)==0
+            stop_sign = 1;
+            new_pop(i,:)
+            break
+        end
     end
+    
+    if stop_sign == 1 
+        break
+    end
+    
     for i=1:2
         selected(i)=RouletteWheelSelection(cost);
     end

@@ -26,7 +26,7 @@ if length(unique(chromosome))==length(chromosome)   %no same time and location
     %soft constraints: no consecutive class    
     for n=1:6               
         if (chromosome(2*n)-chromosome(2*n-1))==1
-            outputArg1 = outputArg1 + 30;
+            outputArg1 = outputArg1 + 10;
             break            
         end
     end

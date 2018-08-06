@@ -1,19 +1,22 @@
 new_pop = population_init();
 stop_sign = 0;
+cost_sum = 0;
 for j=1:500000
     for i=1:20
         cost(i)= fitness(new_pop(i,:));
         if cost(i)==0
             stop_sign = 1;
-            Draw_table(new_pop(i,:))
+            %Draw_table(new_pop(i,:))
             break
         end
     end
-    cost_sum(j) = sum(cost);
-    
-    if stop_sign == 1 
-        break
+    if mod(j,1000) == 0
+        cost_sum(j/1000) = sum(cost);
     end
+    
+    %if stop_sign == 1 
+    %   break
+    %end
     
     for i=1:2
         selected(i)=RouletteWheelSelection(cost);
@@ -25,7 +28,7 @@ for j=1:500000
     new_pop(selected(2),:)=cross2;
 end
 plot(cost_sum)
-xlabel('Iteration')
+xlabel('Iteration*10^3')
 ylabel('Population Cost')
 hold on
 

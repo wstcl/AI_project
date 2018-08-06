@@ -18,7 +18,7 @@ for n=1:12
 
 end
 figure
-stem3(row-1,colum,room)
+stem3(row-1,colum,room,'filled')
 xlabel('time')
 ylabel('date')
 zlabel('room')
